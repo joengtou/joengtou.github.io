@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Linux学习之路 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Linux常用命令一. 文件处理命令 1.ls1.1 -a –all 显示所有文件，带’.’为隐藏文件1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名文件类型:-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习之路">
+<meta property="og:url" content="http://example.com/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux常用命令一. 文件处理命令 1.ls1.1 -a –all 显示所有文件，带’.’为隐藏文件1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名文件类型:-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-09T16:47:55.820Z">
+<meta property="article:modified_time" content="2021-01-26T09:54:35.886Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Linux学习之路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2021-01-09T16:47:55.820Z" itemprop="datePublished">2021-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux学习之路
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h3 id="一-文件处理命令"><a href="#一-文件处理命令" class="headerlink" title="一. 文件处理命令"></a>一. 文件处理命令</h3><blockquote>
+<h4 id="1-ls"><a href="#1-ls" class="headerlink" title="1.ls"></a>1.ls</h4><p>1.1 -a –all 显示所有文件，带’.’为隐藏文件<br>1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名<br>文件类型:<br>-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件</p>
+</blockquote>
+<a id="more"></a>
+<p>1.3 -d 只显示该目录信息<br>1.4 -i 显示i节点</p>
+<blockquote>
+<h4 id="2-mkdir"><a href="#2-mkdir" class="headerlink" title="2.mkdir"></a>2.mkdir</h4><p>2.1 -p 递归创建<br>2.2pwd当前目录绝对路径</p>
+</blockquote>
+<blockquote>
+<h4 id="3-cp"><a href="#3-cp" class="headerlink" title="3.cp"></a>3.cp</h4><p>3.1 -r 复制目录<br>3.2 -p保留文件属性<br>3.3复制同时创建目录等同于复制同时重命名</p>
+</blockquote>
+<blockquote>
+<h4 id="4-mv"><a href="#4-mv" class="headerlink" title="4.mv"></a>4.mv</h4><p>4.1原地移动改名</p>
+</blockquote>
+<blockquote>
+<h4 id="5-rm"><a href="#5-rm" class="headerlink" title="5.rm"></a>5.rm</h4><p>5.1 -r删除目录<br>5.2 -f强制删除(不询问)</p>
+</blockquote>
+<blockquote>
+<h4 id="6-touch"><a href="#6-touch" class="headerlink" title="6.touch"></a>6.touch</h4><p>6.1文件名带空格时使用“ ”</p>
+</blockquote>
+<blockquote>
+<h4 id="7-cat"><a href="#7-cat" class="headerlink" title="7.cat"></a>7.cat</h4><p>7.1 -n显示行号<br>7.2 tac反向显示</p>
+</blockquote>
+<blockquote>
+<h4 id="8-more"><a href="#8-more" class="headerlink" title="8.more"></a>8.more</h4></blockquote>
+<blockquote>
+<h4 id="9-less"><a href="#9-less" class="headerlink" title="9.less"></a>9.less</h4><p>9.1 /查找内容<br>9.2可向下</p>
+</blockquote>
+<blockquote>
+<h4 id="10-head"><a href="#10-head" class="headerlink" title="10.head"></a>10.head</h4></blockquote>
+<blockquote>
+<h4 id="11-tail"><a href="#11-tail" class="headerlink" title="11.tail"></a>11.tail</h4><p>11.1 -f动态显示</p>
+</blockquote>
+<blockquote>
+<h4 id="12-ln"><a href="#12-ln" class="headerlink" title="12.ln"></a>12.ln</h4><p>12.1 -s软连接(类似于快捷方式)<br>12.1.1rwxrwxrwx<br>12.2小<br>12.3 echo “内容”&gt;&gt;文件<br>12.4 硬链接(和cp的区别是与源文件同步更新)<br>12.4.1 与源文件同同节点<br>12.4.2 不能跨分区<br>12.4.3 不能对目录使用</p>
+</blockquote>
+<hr>
+<h3 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h3><blockquote>
+<h4 id="1-chmod"><a href="#1-chmod" class="headerlink" title="1.chmod"></a>1.chmod</h4><p>1.1 u,g,o,+,-,=<br>1.2 rwx,421<br>1.3 -R 递归修改<br>1.4 useradd,passwd添加用户<br>1.5删除文件的条件是拥有对其父目录的写权限</p>
+</blockquote>
+<blockquote>
+<h4 id="2-chown"><a href="#2-chown" class="headerlink" title="2.chown"></a>2.chown</h4></blockquote>
+<blockquote>
+<h4 id="3-chgrp"><a href="#3-chgrp" class="headerlink" title="3.chgrp"></a>3.chgrp</h4><p>3.1groupadd</p>
+</blockquote>
+<blockquote>
+<h4 id="4-umask-S"><a href="#4-umask-S" class="headerlink" title="4.umask -S"></a>4.umask -S</h4></blockquote>
+<hr>
+<h3 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h3><blockquote>
+<h4 id="1-find"><a href="#1-find" class="headerlink" title="1.find"></a>1.find</h4><p>1.1 -name,-iname(不区分大小写)<br>1.1.1 *多个字符,?单个字符<br>1.1.2服务器高峰期尽量不使用<br>1.2 -size<br>1.2.1 +大于, -小于<br>1.2.2 数据块单位512字节，100MB=204800块<br>1.3 -user,-group<br>1.4 -amin访问时间，-cmin文件属性，-mmin文件内容<br>1.4.1 -5 在5分钟内，+超过<br>1.5 -a  与,-o 或<br>1.6 -type ,f文件，d目录，l链接<br>1.7-exec/-ok(有询问) 对查找结果进行其后操作 {} ;<br>1.8 -inum节点查找</p>
+</blockquote>
+<blockquote>
+<h4 id="2-locate"><a href="#2-locate" class="headerlink" title="2.locate"></a>2.locate</h4><p>2.1 updatedb 更新文件资料库<br>2.2 不能查临时文件<br>2.3 -i 不区分大小写</p>
+</blockquote>
+<blockquote>
+<h4 id="3-which-whereis"><a href="#3-which-whereis" class="headerlink" title="3.which,whereis"></a>3.which,whereis</h4></blockquote>
+<blockquote>
+<h4 id="4-grep"><a href="#4-grep" class="headerlink" title="4.grep"></a>4.grep</h4><p>4.1 -v排除指定字串所在行   -v ^#去注释<br>4.2 -i不区分大小写</p>
+</blockquote>
+<hr>
+<h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><blockquote>
+<h4 id="1-man"><a href="#1-man" class="headerlink" title="1.man"></a>1.man</h4><p>1.1 man+命令<br>   more和ls的结合体<br>1.2 man+配置文件<br>   1命令的帮助，5配置文件的帮助</p>
+</blockquote>
+<blockquote>
+<h4 id="2-whatis-apropos"><a href="#2-whatis-apropos" class="headerlink" title="2.whatis,apropos"></a>2.whatis,apropos</h4><p>2.1 都可以查，前者精确后者模糊<br>2.2 whatis查命令 apropos查配置文件</p>
+</blockquote>
+<blockquote>
+<h4 id="3-–help"><a href="#3-–help" class="headerlink" title="3.–help"></a>3.–help</h4></blockquote>
+<blockquote>
+<h4 id="4-info类似于man"><a href="#4-info类似于man" class="headerlink" title="4. info类似于man"></a>4. info类似于man</h4></blockquote>
+<blockquote>
+<h4 id="5-help"><a href="#5-help" class="headerlink" title="5. help"></a>5. help</h4><p>查看shell内置命令</p>
+</blockquote>
+<hr>
+<h3 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h3><blockquote>
+<h4 id="1-useradd"><a href="#1-useradd" class="headerlink" title="1.useradd"></a>1.useradd</h4></blockquote>
+<blockquote>
+<h4 id="2-passwd"><a href="#2-passwd" class="headerlink" title="2.passwd"></a>2.passwd</h4></blockquote>
+<blockquote>
+<h4 id="3-who"><a href="#3-who" class="headerlink" title="3.who"></a>3.who</h4><p>tty 本地登录 pts 远程终端</p>
+</blockquote>
+<blockquote>
+<h4 id="4-w"><a href="#4-w" class="headerlink" title="4.w"></a>4.w</h4><p>比who更详细</p>
+</blockquote>
+<hr>
+<h3 id="压缩解压命令"><a href="#压缩解压命令" class="headerlink" title="压缩解压命令"></a>压缩解压命令</h3><blockquote>
+<h4 id="1-gzip"><a href="#1-gzip" class="headerlink" title="1.gzip"></a>1.gzip</h4><p>只能压缩文件不能压缩目录，且不保留源文件<br>gunzip(gzip -d)</p>
+</blockquote>
+<blockquote>
+<h4 id="2-tar"><a href="#2-tar" class="headerlink" title="2.tar"></a>2.tar</h4><p>-c打包-x解包，<br>-v显示信息-f指定文件名（必须放最后）<br>-z压缩/解压<br>例: tar -zcvf<br>tar -zxvf</p>
+</blockquote>
+<blockquote>
+<h4 id="3-zip"><a href="#3-zip" class="headerlink" title="3.zip"></a>3.zip</h4><p>-r压缩目录<br>unzip</p>
+</blockquote>
+<blockquote>
+<h4 id="4-bzip2"><a href="#4-bzip2" class="headerlink" title="4.bzip2"></a>4.bzip2</h4><p>压缩效率高<br>-k保持原文件<br>bunzip2<br>例:(将gzip的z改为j)<br>tar -jcvf<br>tar -jxvf</p>
+</blockquote>
+<hr>
+<h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><blockquote>
+<h4 id="1-write"><a href="#1-write" class="headerlink" title="1.write"></a>1.write</h4><p>指定用户<br>ctrl+d保存退出</p>
+</blockquote>
+<blockquote>
+<h4 id="2-wall"><a href="#2-wall" class="headerlink" title="2.wall"></a>2.wall</h4><p>广播信息</p>
+</blockquote>
+<blockquote>
+<h4 id="3-mail"><a href="#3-mail" class="headerlink" title="3.mail"></a>3.mail</h4></blockquote>
+<blockquote>
+<h4 id="4-last"><a href="#4-last" class="headerlink" title="4.last"></a>4.last</h4><p>日志查询<br>lastlog最后登录时间</p>
+</blockquote>
+<blockquote>
+<h4 id="5-traceroute"><a href="#5-traceroute" class="headerlink" title="5.traceroute"></a>5.traceroute</h4><p>显示数据包到主机间的路径</p>
+</blockquote>
+<blockquote>
+<h4 id="6-netstat"><a href="#6-netstat" class="headerlink" title="6.netstat"></a>6.netstat</h4><p>-t tcp,-u udp,-l 监听,-r 路由,-n 显示ip地址和端口号</p>
+</blockquote>
+<blockquote>
+<h4 id="7-mount"><a href="#7-mount" class="headerlink" title="7.mount"></a>7.mount</h4><p>挂载光盘<br>umount取消挂载</p>
+</blockquote>
+<hr>
+<h3 id="关机重启"><a href="#关机重启" class="headerlink" title="关机重启"></a>关机重启</h3><blockquote>
+<h4 id="1-shutdown"><a href="#1-shutdown" class="headerlink" title="1.shutdown"></a>1.shutdown</h4><p>-h关机-r重启-c取消前一个关机命令</p>
+</blockquote>
+<blockquote>
+<h4 id="2-halt-poweroff-init-0关机"><a href="#2-halt-poweroff-init-0关机" class="headerlink" title="2.halt,poweroff,init 0关机"></a>2.halt,poweroff,init 0关机</h4></blockquote>
+<blockquote>
+<h4 id="3-reboot-init-6重启"><a href="#3-reboot-init-6重启" class="headerlink" title="3.reboot,init 6重启"></a>3.reboot,init 6重启</h4></blockquote>
+<h2 id="二-文本编译器vim"><a href="#二-文本编译器vim" class="headerlink" title="二. 文本编译器vim"></a>二. 文本编译器vim</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><blockquote>
+<p>插入: aio<br>定位: set nu   :n<br>删除: x  nx   dd  ndd<br>复制和剪切: yy-p   dd-p<br>替换和恢复: r/R<br>搜索和替换: /关键词 n      :%s/old/new/g<br>保存退出: ZZ  :wq  :q!  :w newname<br>行首0   行末$<br>文首gg  文末G</p>
+</blockquote>
+<h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><blockquote>
+<p>导入命令执行结果:   :r !命令<br>定义快捷键:  :map 快捷键 触发命令<br>连续行注释: n1,n2s/^/#/g<br>替换: ab mail <a href="mailto:&#50;&#50;&#x39;&#x32;&#57;&#x30;&#x33;&#55;&#x37;&#x35;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;">&#50;&#50;&#x39;&#x32;&#57;&#x30;&#x33;&#55;&#x37;&#x35;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;</a><br>修改配置文件: /home/root/.vimrc</p>
+</blockquote>
+<h2 id="三-软件包管理"><a href="#三-软件包管理" class="headerlink" title="三.软件包管理"></a>三.软件包管理</h2><h3 id="软件包分类"><a href="#软件包分类" class="headerlink" title="软件包分类"></a>软件包分类</h3><blockquote>
+<h4 id="源码包"><a href="#源码包" class="headerlink" title="源码包:"></a>源码包:</h4><ol>
+<li>开源，自由定制，效率高</li>
+<li>安装慢，报错不好解决</li>
+</ol>
+</blockquote>
+<blockquote>
+<h4 id="二进制包-RPM"><a href="#二进制包-RPM" class="headerlink" title="二进制包(RPM)"></a>二进制包(RPM)</h4><ol>
+<li>安装快</li>
+<li>看不到源码，依赖性</li>
+</ol>
+</blockquote>
+<h3 id="rpm命令管理"><a href="#rpm命令管理" class="headerlink" title="rpm命令管理"></a>rpm命令管理</h3><blockquote>
+<h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4></blockquote>
+<blockquote>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4></blockquote>
+<h2 id="四-用户与用户组"><a href="#四-用户与用户组" class="headerlink" title="四.用户与用户组"></a>四.用户与用户组</h2><blockquote>
+<p>passwd -S 查询用户状态<br>chage -d 0 用户名   ，密码修改日期归0即上线强制改密码</p>
+</blockquote>
+<blockquote>
+<p>userdel 相当与 修改/etc/passwd,shadow,group,gshadow  删除/var/spool/mail/用户名  /home/用户名</p>
+</blockquote>
+<blockquote>
+<p>su - root ( ‘-’ 同时改变操作环境)</p>
+</blockquote>
+<h2 id="五-权限管理"><a href="#五-权限管理" class="headerlink" title="五. 权限管理"></a>五. 权限管理</h2><h3 id="ACL权限"><a href="#ACL权限" class="headerlink" title="ACL权限"></a>ACL权限</h3><blockquote>
+<h4 id="开启ACL"><a href="#开启ACL" class="headerlink" title="开启ACL"></a>开启ACL</h4><p>查看分区挂载：df -h<br>查看分区ACL权限是否开启：dumpe2fs -h /dev/vda1<br>临时开启分区ACL权限：mount -o remount,acl /<br>永久开启：修改开机默认挂载/etc/fstab 添加acl ;重新挂载文件系统mount -o remount / 或重启系统</p>
+<h4 id="查看与设定"><a href="#查看与设定" class="headerlink" title="查看与设定"></a>查看与设定</h4><p>setfacl -m <em>(表示添加acl)</em>  u:用户名:权限  目录      ;g:组名<br>getfacl 目录名</p>
+<h4 id="最大有效权限与删除"><a href="#最大有效权限与删除" class="headerlink" title="最大有效权限与删除"></a>最大有效权限与删除</h4><p>mask权限类似于子网掩码,修改 setfacl -m m:权限,只影响acl用户和所属组<br>删除：setfacl -b 目录名 ；setfacl -x 指定组或用户名</p>
+<h4 id="默认与递归"><a href="#默认与递归" class="headerlink" title="默认与递归"></a>默认与递归</h4><p>递归(只能作用于现有的文件)： -R 只能放在最后<br>默认(作用于未来，不作用于现有文件)：setfacl -m  d:u:权限 -R  目录名</p>
+</blockquote>
+<h3 id="文件特殊权限"><a href="#文件特殊权限" class="headerlink" title="文件特殊权限"></a>文件特殊权限</h3><blockquote>
+<h4 id="setUID"><a href="#setUID" class="headerlink" title="setUID"></a>setUID</h4><p>必须是可执行二进制文件<br>命令执行者要对该程序具有x执行权限<br>chmod u+s  chmod 4755<br>使用户使用文件时短暂具有所有者的权限</p>
+<h4 id="setGID"><a href="#setGID" class="headerlink" title="setGID"></a>setGID</h4><p>可执行文件或目录<br>chmod g+s  chmod 2755</p>
+<h4 id="Sticky-BIT"><a href="#Sticky-BIT" class="headerlink" title="Sticky BIT"></a>Sticky BIT</h4><p>只针对目录<br>普通用户对该目录拥有wx权限<br>chmod o+t chmod 1755<br>只能删除自己创建的文件</p>
+</blockquote>
+<h3 id="文件系统属性权限chattr"><a href="#文件系统属性权限chattr" class="headerlink" title="文件系统属性权限chattr"></a>文件系统属性权限chattr</h3><blockquote>
+<p>对root同样有效<br>chattr -i 文件，文件只读<br>chattr -i 目录，只能为目录下的文件增加内容，不能删除和新建<br>chattr -a 文件，只能追加数据<br>chattr -a 目录，只能新建不能删除<br>查看权限 lsattr</p>
+</blockquote>
+<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><blockquote>
+<p>visudo<br>实际修改的是/etc/sudoers</p>
+</blockquote>
+<blockquote>
+<p>用户名或组名(%)   被管理主机地址=(可使用的身份)   命令(绝对路径)<br>yt ALL= /sbin/shutdown -r now<br>命令越简单权力越大</p>
+</blockquote>
+<h2 id="六-文件系统管理"><a href="#六-文件系统管理" class="headerlink" title="六. 文件系统管理"></a>六. 文件系统管理</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><blockquote>
+<p>逻辑分区编号从5开始</p>
+</blockquote>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
+<h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><p>统计文件系统占用情况<br>包括序占用的空间（如文件已经删除但程序并没有释放空间）</p>
+</blockquote>
+<blockquote>
+<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><p>文件占用空间情况<br>ls命令只会显示该目录以及一级子目录所占空间<br>-s 统计总占用量<br>-a显示子文件占用量，默认只显示子目录<br>！！高负载命令<br>面向文件，只计算文件或目录占用空间，比df小</p>
+</blockquote>
+<blockquote>
+<h4 id="fsck"><a href="#fsck" class="headerlink" title="fsck"></a>fsck</h4><p>-a或-y 分区设备文件名</p>
+</blockquote>
+<blockquote>
+<h4 id="dumpefs"><a href="#dumpefs" class="headerlink" title="dumpefs"></a>dumpefs</h4><p>超级块信息，每块大小</p>
+</blockquote>
+<blockquote>
+<h4 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h4><p>mount 查询已经挂载设备，-l显示卷标名称<br>-a 依据配置文件/etc/fstab内容自动挂载<br>-o 特殊挂载</p>
+</blockquote>
+<blockquote>
+<h4 id="挂载光盘与u盘"><a href="#挂载光盘与u盘" class="headerlink" title="挂载光盘与u盘"></a>挂载光盘与u盘</h4><p>建立挂载点 mkdir /mnt/cdrom/<br>挂载光盘mount  -t iso9660 /dev/cdrom /mnt/cdrom<br>取消挂载 umont /mnt/cdrom</p>
+</blockquote>
+<blockquote>
+<p>fdisk -l查看u盘设备文件名<br>建立挂载点 mkdir /mnt/usb/<br>挂载光盘mount  -t vfat /dev/设备名  /mnt/usb<br>取消挂载 umont /mnt/usb</p>
+</blockquote>
+<blockquote>
+<h4 id="支持NTFS文件系统"><a href="#支持NTFS文件系统" class="headerlink" title="支持NTFS文件系统"></a>支持NTFS文件系统</h4><p>安装插件 ntfs-3g</p>
+</blockquote>
+<h3 id="fdisk分区"><a href="#fdisk分区" class="headerlink" title="fdisk分区"></a>fdisk分区</h3><h3 id="etc-fstab-文件修复"><a href="#etc-fstab-文件修复" class="headerlink" title="/etc/fstab 文件修复"></a>/etc/fstab 文件修复</h3><h3 id="分配swap分区"><a href="#分配swap分区" class="headerlink" title="分配swap分区"></a>分配swap分区</h3><blockquote>
+<p>free 查看内存与swap分区</p>
+</blockquote>
+<h2 id="七-Shell基础"><a href="#七-Shell基础" class="headerlink" title="七. Shell基础"></a>七. Shell基础</h2><h3 id="Shell概述"><a href="#Shell概述" class="headerlink" title="Shell概述"></a>Shell概述</h3><blockquote>
+<p>命令解释器<br>/etc/shells</p>
+</blockquote>
+<h3 id="Shell脚本的执行方式"><a href="#Shell脚本的执行方式" class="headerlink" title="Shell脚本的执行方式"></a>Shell脚本的执行方式</h3><p>./hello.sh 或bash hello.sh</p>
+<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><blockquote>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><p>保存文件～/a.bash_profile<br>-c 清空<br>-w 缓冲</p>
+<h4 id="历史命令调用"><a href="#历史命令调用" class="headerlink" title="历史命令调用"></a>历史命令调用</h4><p>!n 第n条；!!上一条；!字串 重复执行最后一条以该字串开头的命令</p>
+<h4 id="常见快捷键"><a href="#常见快捷键" class="headerlink" title="常见快捷键"></a>常见快捷键</h4><p>^u ^y 剪切与粘贴<br>^r 查找命令<br>^d 登出 </p>
+</blockquote>
+<blockquote>
+<h4 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h4><p>输出<br>覆盖&gt; 追加&gt;&gt;<br>错误命令 2&gt; 2&gt;&gt;<br>同时保存 &amp;&gt;；&amp;&gt;&gt;；命令&gt;文件 2&gt;&amp;1；命令&gt;&gt;文件 2&gt;&amp;1</p>
+</blockquote>
+<blockquote>
+<p>输入<br>wc &lt; 文件名</p>
+</blockquote>
+<blockquote>
+<h4 id="多命令顺序执行与管道符"><a href="#多命令顺序执行与管道符" class="headerlink" title="多命令顺序执行与管道符"></a>多命令顺序执行与管道符</h4><p>多命令顺序执行<br>; 命令两遍用date可统计执行命令需要执行时间,如date; dd if=/dev/zero of=/root/testfile bs=1k count=100000;date<br>&amp;&amp;<br>||</p>
+</blockquote>
+<blockquote>
+<p>管道符<br>|命令一的正确输出作为命令二的操作对象<br>netstat -na | grep ESTABLISHED</p>
+</blockquote>
+<blockquote>
+<h4 id="通配符与其他符号"><a href="#通配符与其他符号" class="headerlink" title="通配符与其他符号"></a>通配符与其他符号</h4><p>通配符，匹配文件名<br>?匹配任意一个字符<br>*匹配任意内容<br>[]匹配括号中的任意一个字符<br>[-]如[a-z]表示范围<br>[^]如[^0-9]表示非数字</p>
+</blockquote>
+<blockquote>
+<p>其他<br>‘ ’其中所有特殊字符都无特殊含义<br>“ ”<br>``和$() 引用系统命令</p>
+</blockquote>
+<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><blockquote>
+<h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><p>只在本shell生效<br>变量调用 ehco $name<br>变量查看 set<br>变量删除 unset name </p>
+</blockquote>
+<blockquote>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p>本shell以及子shell生效<br>export 添加环境变量<br>pstree进程树<br>PATH=”$PATH”:/root<br>PS1系统起始字符</p>
+</blockquote>
+<blockquote>
+<h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><p>$n：$0代表命令本身<br>$* ：返回所有参数，把所有参数看成一个整体<br>$@：分别返回所有参数<br>$：#返回所有参数</p>
+</blockquote>
+<blockquote>
+<h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><p>$? 上一条命令的执行状态，0为正确<br>$$当前进程的进程号<br>$!后台运行的最后一个进程的进程号</p>
+</blockquote>
+<blockquote>
+<p>read 接收键盘输入<br>-p提示信息<br>-t秒数<br>-n字符数<br>-s隐藏输入</p>
+</blockquote>
+<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><blockquote>
+<h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><p>declare声明变量类型<br>-设定类型<br>+取消类型<br>-i声明为整型<br>-x声明为环境变量 相当于export<br>-p显示声明类型</p>
+</blockquote>
+<blockquote>
+<p>$(exper 运算式)</p>
+</blockquote>
+<blockquote>
+<p>$((运算式))</p>
+</blockquote>
+<blockquote>
+<h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><p>x=${y-new}  ,y没有值，x=new ；y为空值，x为空；y有值，x=$y<br>…</p>
+</blockquote>
+<h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3><blockquote>
+</blockquote>
+<h2 id="八-Shell编程"><a href="#八-Shell编程" class="headerlink" title="八. Shell编程"></a>八. Shell编程</h2><h2 id="九-服务管理"><a href="#九-服务管理" class="headerlink" title="九. 服务管理"></a>九. 服务管理</h2><h2 id="十-系统管理"><a href="#十-系统管理" class="headerlink" title="十. 系统管理"></a>十. 系统管理</h2><h2 id="十一-日志管理"><a href="#十一-日志管理" class="headerlink" title="十一. 日志管理"></a>十一. 日志管理</h2><h2 id="十二-启动管理"><a href="#十二-启动管理" class="headerlink" title="十二. 启动管理"></a>十二. 启动管理</h2><h2 id="十三-备份恢复"><a href="#十三-备份恢复" class="headerlink" title="十三. 备份恢复"></a>十三. 备份恢复</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" data-id="ckkdufwhc00002cu73n5ff4l9" data-title="Linux学习之路" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Linux学习之路</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
