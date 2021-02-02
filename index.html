@@ -142,6 +142,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-go学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Go学习之路</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-01-19T06:30:10.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="go的优势"><a href="#go的优势" class="headerlink" title="go的优势"></a>go的优势</h4><blockquote>
+<p>部署简单，不需要太多依赖库<br>是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉<br>gc垃圾自动回收<br>自带并发</p>
+</blockquote>
+<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4><blockquote>
+<p>1.服务器编程(日志，数据打包，虚拟机处理，文件系统)<br>2.分布式系统(数据库代理器)<br>3.网络编程(web应用，api应用)<br>4.内存数据库<br>5.云平台<br>[中文文档][https:/studygolang.com/pkgdoc]</p>
+</blockquote>
+<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><blockquote>
+<p>自动推导类型相当于声明+赋值<br>定义了必须使用<br>未赋值默认零值</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本语法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg1</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">&quot;helloworld&quot;</span>)</span><br><span class="line"><span class="keyword">var</span> a <span class="keyword">int</span></span><br><span class="line">fmt.Println(<span class="string">&quot;a= &quot;</span>, a)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自动推导类型</span></span><br><span class="line"><span class="comment">//const 定义常量时不用：</span></span><br><span class="line">lc := <span class="number">111</span></span><br><span class="line">ic := <span class="number">65525.0</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;l_c_type: %T i_c_type: %T \n&quot;</span>, lc, ic)</span><br><span class="line"></span><br><span class="line"><span class="comment">//swap</span></span><br><span class="line">i, j := <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">i, j = j, i</span><br><span class="line"></span><br><span class="line"><span class="comment">//匿名变量</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span></span><br><span class="line">_, b, _ = test()</span><br><span class="line">fmt.Println(<span class="string">&quot;b: &quot;</span>, b)</span><br><span class="line"></span><br><span class="line"><span class="comment">//常量自动生成器iota</span></span><br><span class="line"><span class="comment">//遇到const重置为0</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	c    = <span class="literal">iota</span>       <span class="comment">//0</span></span><br><span class="line">	f, d = <span class="literal">iota</span>, <span class="literal">iota</span> <span class="comment">//1 同行相等</span></span><br><span class="line">	e    = <span class="literal">iota</span>       <span class="comment">//2</span></span><br><span class="line">)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%d %d %d %d\n&quot;</span>, c, f, d, e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>数据类型</li>
+</ol>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg2</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">//字符byte</span></span><br><span class="line"><span class="comment">//大小写转换32</span></span><br><span class="line"><span class="keyword">var</span> ch <span class="keyword">byte</span></span><br><span class="line">str := <span class="string">&quot;hello&quot;</span></span><br><span class="line">ch = <span class="string">&#x27;a&#x27;</span>  <span class="comment">//声明为字符，类型为unit8</span></span><br><span class="line">ck := <span class="string">&#x27;b&#x27;</span> <span class="comment">//自动识别类型为int32</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, str)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, ch)</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_ch= %T\n&quot;</span>, ch)</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_ck= %T\n&quot;</span>, ck)</span><br><span class="line">v := <span class="number">3.0140</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%v\n&quot;</span>, v) <span class="comment">//%v自动匹配格式输出，小数自动舍0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//复数</span></span><br><span class="line"><span class="keyword">var</span> com <span class="keyword">complex128</span></span><br><span class="line">com = <span class="number">1</span> + <span class="number">2i</span></span><br><span class="line">fmt.Println(com)</span><br><span class="line"><span class="comment">//内置函数</span></span><br><span class="line">fmt.Println(<span class="string">&quot;real=&quot;</span>, <span class="built_in">real</span>(com), <span class="string">&quot; imag=&quot;</span>, <span class="built_in">imag</span>(com))</span><br><span class="line"></span><br><span class="line"><span class="comment">//输入</span></span><br><span class="line"><span class="keyword">var</span> cin <span class="keyword">int</span></span><br><span class="line"><span class="comment">//fmt.Scanf(&quot;%d&quot;,&amp;cin)</span></span><br><span class="line">fmt.Println(<span class="string">&quot;要输入：&quot;</span>)</span><br><span class="line">fmt.Scan(&amp;cin)</span><br><span class="line">fmt.Println(cin)</span><br><span class="line"></span><br><span class="line"><span class="comment">//类型转换需要兼容，如bool与整型不兼容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//起别名</span></span><br><span class="line"><span class="keyword">type</span> char <span class="keyword">byte</span></span><br><span class="line"><span class="keyword">var</span> cha char</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_cha= %T\n&quot;</span>,cha)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.流程控制</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//流程控制</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg3</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">goto</span> end</span><br><span class="line">	<span class="comment">//没有前增量</span></span><br><span class="line">	<span class="comment">//if条件不用加括号</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">	<span class="keyword">if</span> a:=<span class="number">1</span>;a==<span class="number">10</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a=10&quot;</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> a&gt;<span class="number">10</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&gt;10&quot;</span>)</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&lt;10&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//switch</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">		<span class="comment">//可在switch后直接加判断语句</span></span><br><span class="line">	<span class="keyword">switch</span> num :=<span class="number">1</span>;num &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">		<span class="comment">//break</span></span><br><span class="line">		<span class="comment">//fallthrough关break</span></span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;2&quot;</span>)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;not find&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//迭代</span></span><br><span class="line">end:	str :=<span class="string">&quot;abc&quot;</span></span><br><span class="line">	<span class="keyword">for</span> i, data :=<span class="keyword">range</span> str&#123;<span class="comment">//返回两个值</span></span><br><span class="line">		<span class="keyword">if</span> i==<span class="number">1</span>&#123;</span><br><span class="line">			<span class="comment">//break//跳出循环，只能用于loop,switch,select</span></span><br><span class="line">			<span class="keyword">continue</span><span class="comment">//跳过本次循环,只能用于loop</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;str[%d]=%c\n&quot;</span>,i,data)</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="comment">//配合匿名变量使用丢弃第二个值 i :=rang str 或 i,_:=range str</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Go语言圣经"><a href="#Go语言圣经" class="headerlink" title="Go语言圣经"></a>Go语言圣经</h3><blockquote>
+<ol>
+<li>s := “”只能用在函数内部，而不能用于包变量</li>
+<li>在Go语言里没有指针运算，也就是不能像c语言里可以对指针进行加或减操作</li>
+<li>在Go语言中不存在未初始化的变量。</li>
+<li>简短变量声明语句中必须至少要声明一个新的变量</li>
+<li>如果两个类型都是空的，也就是说类型的大小是0，例如struct{}和[0]int，有可能有相同的地址</li>
+<li>一个变量的有效周期只取决于是否可达</li>
+<li>声明语句的作用域对应的是一个源代码的文本区域；它是一个编译时的属性。一个变量的生命周期是指程序运行时变量存在的有效时间段，在此时间区域内它可以被程序的其他部分引用；是一个运行时的概念。</li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Go</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux学习之路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -306,6 +411,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
               </li>
             
             <div class="clearfix"></div>

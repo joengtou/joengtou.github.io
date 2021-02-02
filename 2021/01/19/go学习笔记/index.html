@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://joengtou.github.io">
-  <title>Linux学习之路 | Joengtou&#39;s Blog</title>
+  <title>Go学习之路 | Joengtou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux常用命令一. 文件处理命令 1.ls1.1 -a –all 显示所有文件，带’.’为隐藏文件1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名文件类型:-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件">
+  <meta name="description" content="go的优势 部署简单，不需要太多依赖库是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉gc垃圾自动回收自带并发  适用场景 1.服务器编程(日志，数据打包，虚拟机处理，文件系统)2.分布式系统(数据库代理器)3.网络编程(web应用，api应用)4.内存数据库5.云平台[中文文档][https:&#x2F;studygolang.com&#x2F;pkgdoc]  基本语法 自动推导类型相当">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习之路">
-<meta property="og:url" content="https://joengtou.github.io/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/index.html">
+<meta property="og:title" content="Go学习之路">
+<meta property="og:url" content="https://joengtou.github.io/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Joengtou&#39;s Blog">
-<meta property="og:description" content="Linux常用命令一. 文件处理命令 1.ls1.1 -a –all 显示所有文件，带’.’为隐藏文件1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名文件类型:-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件">
+<meta property="og:description" content="go的优势 部署简单，不需要太多依赖库是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉gc垃圾自动回收自带并发  适用场景 1.服务器编程(日志，数据打包，虚拟机处理，文件系统)2.分布式系统(数据库代理器)3.网络编程(web应用，api应用)4.内存数据库5.云平台[中文文档][https:&#x2F;studygolang.com&#x2F;pkgdoc]  基本语法 自动推导类型相当">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-09T16:47:55.820Z">
-<meta property="article:modified_time" content="2021-02-02T09:07:00.572Z">
+<meta property="article:published_time" content="2021-01-19T06:30:10.740Z">
+<meta property="article:modified_time" content="2021-02-02T09:17:28.616Z">
 <meta property="article:author" content="JoengTou">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Joengtou&#39;s Blog" type="application/atom+xml">
@@ -145,365 +145,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux学习之路" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-go学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Linux学习之路
+      Go学习之路
     </h1>
   
 
         
-        <a href="/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
-  	<time datetime="2021-01-09T16:47:55.820Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+        <a href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-01-19T06:30:10.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h3 id="一-文件处理命令"><a href="#一-文件处理命令" class="headerlink" title="一. 文件处理命令"></a>一. 文件处理命令</h3><blockquote>
-<h4 id="1-ls"><a href="#1-ls" class="headerlink" title="1.ls"></a>1.ls</h4><p>1.1 -a –all 显示所有文件，带’.’为隐藏文件<br>1.2 -l 详细信息，权限-调用次数(连接)-所有者-用户组-文件容量(byte,使用-h更改统    计单位)-修改日期-    文件名<br>文件类型:<br>-普通文件 d目录文件 p管理文件 l链接文件 b块设备文件 c字符设备文件 s套接字文件</p>
+        <h4 id="go的优势"><a href="#go的优势" class="headerlink" title="go的优势"></a>go的优势</h4><blockquote>
+<p>部署简单，不需要太多依赖库<br>是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉<br>gc垃圾自动回收<br>自带并发</p>
 </blockquote>
-<a id="more"></a>
-<p>1.3 -d 只显示该目录信息<br>1.4 -i 显示i节点</p>
-<blockquote>
-<h4 id="2-mkdir"><a href="#2-mkdir" class="headerlink" title="2.mkdir"></a>2.mkdir</h4><p>2.1 -p 递归创建<br>2.2pwd当前目录绝对路径</p>
+<h4 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h4><blockquote>
+<p>1.服务器编程(日志，数据打包，虚拟机处理，文件系统)<br>2.分布式系统(数据库代理器)<br>3.网络编程(web应用，api应用)<br>4.内存数据库<br>5.云平台<br>[中文文档][https:/studygolang.com/pkgdoc]</p>
 </blockquote>
-<blockquote>
-<h4 id="3-cp"><a href="#3-cp" class="headerlink" title="3.cp"></a>3.cp</h4><p>3.1 -r 复制目录<br>3.2 -p保留文件属性<br>3.3复制同时创建目录等同于复制同时重命名</p>
+<h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><blockquote>
+<p>自动推导类型相当于声明+赋值<br>定义了必须使用<br>未赋值默认零值</p>
 </blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本语法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg1</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">&quot;helloworld&quot;</span>)</span><br><span class="line"><span class="keyword">var</span> a <span class="keyword">int</span></span><br><span class="line">fmt.Println(<span class="string">&quot;a= &quot;</span>, a)</span><br><span class="line"></span><br><span class="line"><span class="comment">//自动推导类型</span></span><br><span class="line"><span class="comment">//const 定义常量时不用：</span></span><br><span class="line">lc := <span class="number">111</span></span><br><span class="line">ic := <span class="number">65525.0</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;l_c_type: %T i_c_type: %T \n&quot;</span>, lc, ic)</span><br><span class="line"></span><br><span class="line"><span class="comment">//swap</span></span><br><span class="line">i, j := <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">i, j = j, i</span><br><span class="line"></span><br><span class="line"><span class="comment">//匿名变量</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span></span><br><span class="line">_, b, _ = test()</span><br><span class="line">fmt.Println(<span class="string">&quot;b: &quot;</span>, b)</span><br><span class="line"></span><br><span class="line"><span class="comment">//常量自动生成器iota</span></span><br><span class="line"><span class="comment">//遇到const重置为0</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	c    = <span class="literal">iota</span>       <span class="comment">//0</span></span><br><span class="line">	f, d = <span class="literal">iota</span>, <span class="literal">iota</span> <span class="comment">//1 同行相等</span></span><br><span class="line">	e    = <span class="literal">iota</span>       <span class="comment">//2</span></span><br><span class="line">)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%d %d %d %d\n&quot;</span>, c, f, d, e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<h4 id="4-mv"><a href="#4-mv" class="headerlink" title="4.mv"></a>4.mv</h4><p>4.1原地移动改名</p>
-</blockquote>
-<blockquote>
-<h4 id="5-rm"><a href="#5-rm" class="headerlink" title="5.rm"></a>5.rm</h4><p>5.1 -r删除目录<br>5.2 -f强制删除(不询问)</p>
-</blockquote>
-<blockquote>
-<h4 id="6-touch"><a href="#6-touch" class="headerlink" title="6.touch"></a>6.touch</h4><p>6.1文件名带空格时使用“ ”</p>
-</blockquote>
-<blockquote>
-<h4 id="7-cat"><a href="#7-cat" class="headerlink" title="7.cat"></a>7.cat</h4><p>7.1 -n显示行号<br>7.2 tac反向显示</p>
-</blockquote>
-<blockquote>
-<h4 id="8-more"><a href="#8-more" class="headerlink" title="8.more"></a>8.more</h4></blockquote>
-<blockquote>
-<h4 id="9-less"><a href="#9-less" class="headerlink" title="9.less"></a>9.less</h4><p>9.1 /查找内容<br>9.2可向下</p>
-</blockquote>
-<blockquote>
-<h4 id="10-head"><a href="#10-head" class="headerlink" title="10.head"></a>10.head</h4></blockquote>
-<blockquote>
-<h4 id="11-tail"><a href="#11-tail" class="headerlink" title="11.tail"></a>11.tail</h4><p>11.1 -f动态显示</p>
-</blockquote>
-<blockquote>
-<h4 id="12-ln"><a href="#12-ln" class="headerlink" title="12.ln"></a>12.ln</h4><p>12.1 -s软连接(类似于快捷方式)<br>12.1.1rwxrwxrwx<br>12.2小<br>12.3 echo “内容”&gt;&gt;文件<br>12.4 硬链接(和cp的区别是与源文件同步更新)<br>12.4.1 与源文件同同节点<br>12.4.2 不能跨分区<br>12.4.3 不能对目录使用</p>
-</blockquote>
-<hr>
-<h3 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h3><blockquote>
-<h4 id="1-chmod"><a href="#1-chmod" class="headerlink" title="1.chmod"></a>1.chmod</h4><p>1.1 u,g,o,+,-,=<br>1.2 rwx,421<br>1.3 -R 递归修改<br>1.4 useradd,passwd添加用户<br>1.5删除文件的条件是拥有对其父目录的写权限</p>
-</blockquote>
-<blockquote>
-<h4 id="2-chown"><a href="#2-chown" class="headerlink" title="2.chown"></a>2.chown</h4></blockquote>
-<blockquote>
-<h4 id="3-chgrp"><a href="#3-chgrp" class="headerlink" title="3.chgrp"></a>3.chgrp</h4><p>3.1groupadd</p>
-</blockquote>
-<blockquote>
-<h4 id="4-umask-S"><a href="#4-umask-S" class="headerlink" title="4.umask -S"></a>4.umask -S</h4></blockquote>
-<hr>
-<h3 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h3><blockquote>
-<h4 id="1-find"><a href="#1-find" class="headerlink" title="1.find"></a>1.find</h4><p>1.1 -name,-iname(不区分大小写)<br>1.1.1 *多个字符,?单个字符<br>1.1.2服务器高峰期尽量不使用<br>1.2 -size<br>1.2.1 +大于, -小于<br>1.2.2 数据块单位512字节，100MB=204800块<br>1.3 -user,-group<br>1.4 -amin访问时间，-cmin文件属性，-mmin文件内容<br>1.4.1 -5 在5分钟内，+超过<br>1.5 -a  与,-o 或<br>1.6 -type ,f文件，d目录，l链接<br>1.7-exec/-ok(有询问) 对查找结果进行其后操作 {} ;<br>1.8 -inum节点查找</p>
-</blockquote>
-<blockquote>
-<h4 id="2-locate"><a href="#2-locate" class="headerlink" title="2.locate"></a>2.locate</h4><p>2.1 updatedb 更新文件资料库<br>2.2 不能查临时文件<br>2.3 -i 不区分大小写</p>
-</blockquote>
-<blockquote>
-<h4 id="3-which-whereis"><a href="#3-which-whereis" class="headerlink" title="3.which,whereis"></a>3.which,whereis</h4></blockquote>
-<blockquote>
-<h4 id="4-grep"><a href="#4-grep" class="headerlink" title="4.grep"></a>4.grep</h4><p>4.1 -v排除指定字串所在行   -v ^#去注释<br>4.2 -i不区分大小写</p>
-</blockquote>
-<hr>
-<h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><blockquote>
-<h4 id="1-man"><a href="#1-man" class="headerlink" title="1.man"></a>1.man</h4><p>1.1 man+命令<br>   more和ls的结合体<br>1.2 man+配置文件<br>   1命令的帮助，5配置文件的帮助</p>
-</blockquote>
-<blockquote>
-<h4 id="2-whatis-apropos"><a href="#2-whatis-apropos" class="headerlink" title="2.whatis,apropos"></a>2.whatis,apropos</h4><p>2.1 都可以查，前者精确后者模糊<br>2.2 whatis查命令 apropos查配置文件</p>
-</blockquote>
-<blockquote>
-<h4 id="3-–help"><a href="#3-–help" class="headerlink" title="3.–help"></a>3.–help</h4></blockquote>
-<blockquote>
-<h4 id="4-info类似于man"><a href="#4-info类似于man" class="headerlink" title="4. info类似于man"></a>4. info类似于man</h4></blockquote>
-<blockquote>
-<h4 id="5-help"><a href="#5-help" class="headerlink" title="5. help"></a>5. help</h4><p>查看shell内置命令</p>
-</blockquote>
-<hr>
-<h3 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h3><blockquote>
-<h4 id="1-useradd"><a href="#1-useradd" class="headerlink" title="1.useradd"></a>1.useradd</h4></blockquote>
-<blockquote>
-<h4 id="2-passwd"><a href="#2-passwd" class="headerlink" title="2.passwd"></a>2.passwd</h4></blockquote>
-<blockquote>
-<h4 id="3-who"><a href="#3-who" class="headerlink" title="3.who"></a>3.who</h4><p>tty 本地登录 pts 远程终端</p>
-</blockquote>
-<blockquote>
-<h4 id="4-w"><a href="#4-w" class="headerlink" title="4.w"></a>4.w</h4><p>比who更详细</p>
-</blockquote>
-<hr>
-<h3 id="压缩解压命令"><a href="#压缩解压命令" class="headerlink" title="压缩解压命令"></a>压缩解压命令</h3><blockquote>
-<h4 id="1-gzip"><a href="#1-gzip" class="headerlink" title="1.gzip"></a>1.gzip</h4><p>只能压缩文件不能压缩目录，且不保留源文件<br>gunzip(gzip -d)</p>
-</blockquote>
-<blockquote>
-<h4 id="2-tar"><a href="#2-tar" class="headerlink" title="2.tar"></a>2.tar</h4><p>-c打包-x解包，<br>-v显示信息-f指定文件名（必须放最后）<br>-z压缩/解压<br>例: tar -zcvf<br>tar -zxvf</p>
-</blockquote>
-<blockquote>
-<h4 id="3-zip"><a href="#3-zip" class="headerlink" title="3.zip"></a>3.zip</h4><p>-r压缩目录<br>unzip</p>
-</blockquote>
-<blockquote>
-<h4 id="4-bzip2"><a href="#4-bzip2" class="headerlink" title="4.bzip2"></a>4.bzip2</h4><p>压缩效率高<br>-k保持原文件<br>bunzip2<br>例:(将gzip的z改为j)<br>tar -jcvf<br>tar -jxvf</p>
-</blockquote>
-<hr>
-<h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><blockquote>
-<h4 id="1-write"><a href="#1-write" class="headerlink" title="1.write"></a>1.write</h4><p>指定用户<br>ctrl+d保存退出</p>
-</blockquote>
-<blockquote>
-<h4 id="2-wall"><a href="#2-wall" class="headerlink" title="2.wall"></a>2.wall</h4><p>广播信息</p>
-</blockquote>
-<blockquote>
-<h4 id="3-mail"><a href="#3-mail" class="headerlink" title="3.mail"></a>3.mail</h4></blockquote>
-<blockquote>
-<h4 id="4-last"><a href="#4-last" class="headerlink" title="4.last"></a>4.last</h4><p>日志查询<br>lastlog最后登录时间</p>
-</blockquote>
-<blockquote>
-<h4 id="5-traceroute"><a href="#5-traceroute" class="headerlink" title="5.traceroute"></a>5.traceroute</h4><p>显示数据包到主机间的路径</p>
-</blockquote>
-<blockquote>
-<h4 id="6-netstat"><a href="#6-netstat" class="headerlink" title="6.netstat"></a>6.netstat</h4><p>-t tcp,-u udp,-l 监听,-r 路由,-n 显示ip地址和端口号</p>
-</blockquote>
-<blockquote>
-<h4 id="7-mount"><a href="#7-mount" class="headerlink" title="7.mount"></a>7.mount</h4><p>挂载光盘<br>umount取消挂载</p>
-</blockquote>
-<hr>
-<h3 id="关机重启"><a href="#关机重启" class="headerlink" title="关机重启"></a>关机重启</h3><blockquote>
-<h4 id="1-shutdown"><a href="#1-shutdown" class="headerlink" title="1.shutdown"></a>1.shutdown</h4><p>-h关机-r重启-c取消前一个关机命令</p>
-</blockquote>
-<blockquote>
-<h4 id="2-halt-poweroff-init-0关机"><a href="#2-halt-poweroff-init-0关机" class="headerlink" title="2.halt,poweroff,init 0关机"></a>2.halt,poweroff,init 0关机</h4></blockquote>
-<blockquote>
-<h4 id="3-reboot-init-6重启"><a href="#3-reboot-init-6重启" class="headerlink" title="3.reboot,init 6重启"></a>3.reboot,init 6重启</h4></blockquote>
-<h2 id="二-文本编译器vim"><a href="#二-文本编译器vim" class="headerlink" title="二. 文本编译器vim"></a>二. 文本编译器vim</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><blockquote>
-<p>插入: aio<br>定位: set nu   :n<br>删除: x  nx   dd  ndd<br>复制和剪切: yy-p   dd-p<br>替换和恢复: r/R<br>搜索和替换: /关键词 n      :%s/old/new/g<br>保存退出: ZZ  :wq  :q!  :w newname<br>行首0   行末$<br>文首gg  文末G</p>
-</blockquote>
-<h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><blockquote>
-<p>导入命令执行结果:   :r !命令<br>定义快捷键:  :map 快捷键 触发命令<br>连续行注释: n1,n2s/^/#/g<br>替换: ab mail <a href="mailto:&#x32;&#x32;&#57;&#x32;&#x39;&#48;&#x33;&#x37;&#55;&#53;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#109;">&#x32;&#x32;&#57;&#x32;&#x39;&#48;&#x33;&#x37;&#55;&#53;&#x40;&#113;&#x71;&#46;&#x63;&#111;&#109;</a><br>修改配置文件: /home/root/.vimrc</p>
-</blockquote>
-<h2 id="三-软件包管理"><a href="#三-软件包管理" class="headerlink" title="三.软件包管理"></a>三.软件包管理</h2><h3 id="软件包分类"><a href="#软件包分类" class="headerlink" title="软件包分类"></a>软件包分类</h3><blockquote>
-<h4 id="源码包"><a href="#源码包" class="headerlink" title="源码包:"></a>源码包:</h4><ol>
-<li>开源，自由定制，效率高</li>
-<li>安装慢，报错不好解决</li>
+<ol>
+<li>数据类型</li>
 </ol>
 </blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg2</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">//字符byte</span></span><br><span class="line"><span class="comment">//大小写转换32</span></span><br><span class="line"><span class="keyword">var</span> ch <span class="keyword">byte</span></span><br><span class="line">str := <span class="string">&quot;hello&quot;</span></span><br><span class="line">ch = <span class="string">&#x27;a&#x27;</span>  <span class="comment">//声明为字符，类型为unit8</span></span><br><span class="line">ck := <span class="string">&#x27;b&#x27;</span> <span class="comment">//自动识别类型为int32</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, str)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, ch)</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_ch= %T\n&quot;</span>, ch)</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_ck= %T\n&quot;</span>, ck)</span><br><span class="line">v := <span class="number">3.0140</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%v\n&quot;</span>, v) <span class="comment">//%v自动匹配格式输出，小数自动舍0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//复数</span></span><br><span class="line"><span class="keyword">var</span> com <span class="keyword">complex128</span></span><br><span class="line">com = <span class="number">1</span> + <span class="number">2i</span></span><br><span class="line">fmt.Println(com)</span><br><span class="line"><span class="comment">//内置函数</span></span><br><span class="line">fmt.Println(<span class="string">&quot;real=&quot;</span>, <span class="built_in">real</span>(com), <span class="string">&quot; imag=&quot;</span>, <span class="built_in">imag</span>(com))</span><br><span class="line"></span><br><span class="line"><span class="comment">//输入</span></span><br><span class="line"><span class="keyword">var</span> cin <span class="keyword">int</span></span><br><span class="line"><span class="comment">//fmt.Scanf(&quot;%d&quot;,&amp;cin)</span></span><br><span class="line">fmt.Println(<span class="string">&quot;要输入：&quot;</span>)</span><br><span class="line">fmt.Scan(&amp;cin)</span><br><span class="line">fmt.Println(cin)</span><br><span class="line"></span><br><span class="line"><span class="comment">//类型转换需要兼容，如bool与整型不兼容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//起别名</span></span><br><span class="line"><span class="keyword">type</span> char <span class="keyword">byte</span></span><br><span class="line"><span class="keyword">var</span> cha char</span><br><span class="line">fmt.Printf(<span class="string">&quot;type_cha= %T\n&quot;</span>,cha)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<h4 id="二进制包-RPM"><a href="#二进制包-RPM" class="headerlink" title="二进制包(RPM)"></a>二进制包(RPM)</h4><ol>
-<li>安装快</li>
-<li>看不到源码，依赖性</li>
-</ol>
+<p>2.流程控制</p>
 </blockquote>
-<h3 id="rpm命令管理"><a href="#rpm命令管理" class="headerlink" title="rpm命令管理"></a>rpm命令管理</h3><blockquote>
-<h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4></blockquote>
-<blockquote>
-<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4></blockquote>
-<h2 id="四-用户与用户组"><a href="#四-用户与用户组" class="headerlink" title="四.用户与用户组"></a>四.用户与用户组</h2><blockquote>
-<p>passwd -S 查询用户状态<br>chage -d 0 用户名   ，密码修改日期归0即上线强制改密码</p>
-</blockquote>
-<blockquote>
-<p>userdel -r 相当与 修改/etc/passwd,shadow,group,gshadow  删除/var/spool/mail/用户名  /home/用户名</p>
-</blockquote>
-<blockquote>
-<p>su - root ( ‘-’ 同时改变操作环境)</p>
-</blockquote>
-<h2 id="五-权限管理"><a href="#五-权限管理" class="headerlink" title="五. 权限管理"></a>五. 权限管理</h2><h3 id="ACL权限"><a href="#ACL权限" class="headerlink" title="ACL权限"></a>ACL权限</h3><blockquote>
-<h4 id="开启ACL"><a href="#开启ACL" class="headerlink" title="开启ACL"></a>开启ACL</h4><p>查看分区挂载：df -h<br>查看分区ACL权限是否开启：dumpe2fs -h /dev/vda1<br>临时开启分区ACL权限：mount -o remount,acl /<br>永久开启：修改开机默认挂载/etc/fstab 添加acl ;重新挂载文件系统mount -o remount / 或重启系统</p>
-<h4 id="查看与设定"><a href="#查看与设定" class="headerlink" title="查看与设定"></a>查看与设定</h4><p>setfacl -m <em>(表示添加acl)</em>  u:用户名:权限  目录      ;g:组名<br>getfacl 目录名</p>
-<h4 id="最大有效权限与删除"><a href="#最大有效权限与删除" class="headerlink" title="最大有效权限与删除"></a>最大有效权限与删除</h4><p>mask权限类似于子网掩码,修改 setfacl -m m:权限,只影响acl用户和所属组<br>删除：setfacl -b 目录名 ；setfacl -x 指定组或用户名</p>
-<h4 id="默认与递归"><a href="#默认与递归" class="headerlink" title="默认与递归"></a>默认与递归</h4><p>递归(只能作用于现有的文件)： -R 只能放在最后<br>默认(作用于未来，不作用于现有文件)：setfacl -m  d:u:权限 -R  目录名</p>
-</blockquote>
-<h3 id="文件特殊权限"><a href="#文件特殊权限" class="headerlink" title="文件特殊权限"></a>文件特殊权限</h3><blockquote>
-<h4 id="setUID"><a href="#setUID" class="headerlink" title="setUID"></a>setUID</h4><p>必须是可执行二进制文件<br>命令执行者要对该程序具有x执行权限<br>chmod u+s  chmod 4755<br>使用户使用文件时短暂具有所有者的权限</p>
-<h4 id="setGID"><a href="#setGID" class="headerlink" title="setGID"></a>setGID</h4><p>可执行文件或目录<br>chmod g+s  chmod 2755</p>
-<h4 id="Sticky-BIT"><a href="#Sticky-BIT" class="headerlink" title="Sticky BIT"></a>Sticky BIT</h4><p>只针对目录<br>普通用户对该目录拥有wx权限<br>chmod o+t chmod 1755<br>只能删除自己创建的文件</p>
-</blockquote>
-<h3 id="文件系统属性权限chattr"><a href="#文件系统属性权限chattr" class="headerlink" title="文件系统属性权限chattr"></a>文件系统属性权限chattr</h3><blockquote>
-<p>对root同样有效<br>chattr -i 文件，文件只读<br>chattr -i 目录，只能为目录下的文件增加内容，不能删除和新建<br>chattr -a 文件，只能追加数据<br>chattr -a 目录，只能新建不能删除<br>查看权限 lsattr</p>
-</blockquote>
-<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><blockquote>
-<p>visudo<br>实际修改的是/etc/sudoers</p>
-</blockquote>
-<blockquote>
-<p>用户名或组名(%)   被管理主机地址=(可使用的身份)   命令(绝对路径)<br>yt ALL= /sbin/shutdown -r now<br>命令越简单权力越大</p>
-</blockquote>
-<h2 id="六-文件系统管理"><a href="#六-文件系统管理" class="headerlink" title="六. 文件系统管理"></a>六. 文件系统管理</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><blockquote>
-<p>逻辑分区编号从5开始</p>
-</blockquote>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
-<h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><p>统计文件系统占用情况<br>包括序占用的空间（如文件已经删除但程序并没有释放空间）</p>
-</blockquote>
-<blockquote>
-<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><p>文件占用空间情况<br>ls命令只会显示该目录以及一级子目录所占空间<br>-s 统计总占用量<br>-a显示子文件占用量，默认只显示子目录<br>！！高负载命令<br>面向文件，只计算文件或目录占用空间，比df小</p>
-</blockquote>
-<blockquote>
-<h4 id="fsck"><a href="#fsck" class="headerlink" title="fsck"></a>fsck</h4><p>-a或-y 分区设备文件名</p>
-</blockquote>
-<blockquote>
-<h4 id="dumpefs"><a href="#dumpefs" class="headerlink" title="dumpefs"></a>dumpefs</h4><p>超级块信息，每块大小</p>
-</blockquote>
-<blockquote>
-<h4 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h4><p>mount 查询已经挂载设备，-l显示卷标名称<br>-a 依据配置文件/etc/fstab内容自动挂载<br>-o 特殊挂载</p>
-</blockquote>
-<blockquote>
-<h4 id="挂载光盘与u盘"><a href="#挂载光盘与u盘" class="headerlink" title="挂载光盘与u盘"></a>挂载光盘与u盘</h4><p>建立挂载点 mkdir /mnt/cdrom/<br>挂载光盘mount  -t iso9660 /dev/cdrom /mnt/cdrom<br>取消挂载 umont /mnt/cdrom</p>
-</blockquote>
-<blockquote>
-<p>fdisk -l查看u盘设备文件名<br>建立挂载点 mkdir /mnt/usb/<br>挂载光盘mount  -t vfat /dev/设备名  /mnt/usb<br>取消挂载 umont /mnt/usb</p>
-</blockquote>
-<blockquote>
-<h4 id="支持NTFS文件系统"><a href="#支持NTFS文件系统" class="headerlink" title="支持NTFS文件系统"></a>支持NTFS文件系统</h4><p>安装插件 ntfs-3g</p>
-</blockquote>
-<h3 id="fdisk分区"><a href="#fdisk分区" class="headerlink" title="fdisk分区"></a>fdisk分区</h3><h3 id="etc-fstab-文件修复"><a href="#etc-fstab-文件修复" class="headerlink" title="/etc/fstab 文件修复"></a>/etc/fstab 文件修复</h3><h3 id="分配swap分区"><a href="#分配swap分区" class="headerlink" title="分配swap分区"></a>分配swap分区</h3><blockquote>
-<p>free 查看内存与swap分区</p>
-</blockquote>
-<h2 id="七-Shell基础"><a href="#七-Shell基础" class="headerlink" title="七. Shell基础"></a>七. Shell基础</h2><h3 id="Shell概述"><a href="#Shell概述" class="headerlink" title="Shell概述"></a>Shell概述</h3><blockquote>
-<p>命令解释器<br>/etc/shells</p>
-</blockquote>
-<h3 id="Shell脚本的执行方式"><a href="#Shell脚本的执行方式" class="headerlink" title="Shell脚本的执行方式"></a>Shell脚本的执行方式</h3><p>./hello.sh 或bash hello.sh</p>
-<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><blockquote>
-<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><p>保存文件～/a.bash_profile<br>-c 清空<br>-w 缓冲</p>
-<h4 id="历史命令调用"><a href="#历史命令调用" class="headerlink" title="历史命令调用"></a>历史命令调用</h4><p>!n 第n条；!!上一条；!字串 重复执行最后一条以该字串开头的命令</p>
-<h4 id="常见快捷键"><a href="#常见快捷键" class="headerlink" title="常见快捷键"></a>常见快捷键</h4><p>^u ^y 剪切与粘贴<br>^r 查找命令<br>^d 登出 </p>
-</blockquote>
-<blockquote>
-<h4 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h4><p>输出<br>覆盖&gt; 追加&gt;&gt;<br>错误命令 2&gt; 2&gt;&gt;<br>同时保存 &amp;&gt;；&amp;&gt;&gt;；命令&gt;文件 2&gt;&amp;1；命令&gt;&gt;文件 2&gt;&amp;1</p>
-</blockquote>
-<blockquote>
-<p>输入<br>wc &lt; 文件名</p>
-</blockquote>
-<blockquote>
-<h4 id="多命令顺序执行与管道符"><a href="#多命令顺序执行与管道符" class="headerlink" title="多命令顺序执行与管道符"></a>多命令顺序执行与管道符</h4><p>多命令顺序执行<br>; 命令两遍用date可统计执行命令需要执行时间,如date; dd if=/dev/zero of=/root/testfile bs=1k count=100000;date<br>&amp;&amp;<br>||</p>
-</blockquote>
-<blockquote>
-<p>管道符<br>|命令一的正确输出作为命令二的操作对象<br>netstat -na | grep ESTABLISHED</p>
-</blockquote>
-<blockquote>
-<h4 id="通配符与其他符号"><a href="#通配符与其他符号" class="headerlink" title="通配符与其他符号"></a>通配符与其他符号</h4><p>通配符，匹配文件名<br>?匹配任意一个字符<br>*匹配任意内容<br>[]匹配括号中的任意一个字符<br>[-]如[a-z]表示范围<br>[^]如[^0-9]表示非数字</p>
-</blockquote>
-<blockquote>
-<p>其他<br>‘ ’其中所有特殊字符都无特殊含义<br>“ ”<br>``和$() 引用系统命令</p>
-</blockquote>
-<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><blockquote>
-<h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><p>只在本shell生效<br>变量调用 ehco $name<br>变量查看 set<br>变量删除 unset name </p>
-</blockquote>
-<blockquote>
-<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p>本shell以及子shell生效<br>export 添加环境变量<br>pstree进程树<br>PATH=”$PATH”:/root<br>PS1系统起始字符</p>
-</blockquote>
-<blockquote>
-<h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><p>$n：$0代表命令本身<br>$* ：返回所有参数，把所有参数看成一个整体<br>$@：分别返回所有参数<br>$：#返回所有参数</p>
-</blockquote>
-<blockquote>
-<h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><p>$? 上一条命令的执行状态，0为正确<br>$$当前进程的进程号<br>$!后台运行的最后一个进程的进程号</p>
-</blockquote>
-<blockquote>
-<p>read 接收键盘输入<br>-p提示信息<br>-t秒数<br>-n字符数<br>-s隐藏输入</p>
-</blockquote>
-<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><blockquote>
-<h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><p>declare声明变量类型<br>-设定类型<br>+取消类型<br>-i声明为整型<br>-x声明为环境变量 相当于export<br>-p显示声明类型</p>
-</blockquote>
-<blockquote>
-<p>$(exper 运算式)</p>
-</blockquote>
-<blockquote>
-<p>$((运算式))</p>
-</blockquote>
-<blockquote>
-<h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><p>x=${y-new}  ,y没有值，x=new ；y为空值，x为空；y有值，x=$y<br>…</p>
-</blockquote>
-<h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3><blockquote>
-<p>source 配置文件 或. 配置文件 ：使配置文件直接生效<br>注销时生效~/.bash_logout</p>
-</blockquote>
-<p>/etc/motd开机提示信息</p>
-<h2 id="八-Shell编程"><a href="#八-Shell编程" class="headerlink" title="八. Shell编程"></a>八. Shell编程</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
-<p>*前一个字符n次<br>.任意一个字符<br>^行首<br>$行尾<br>[]括号内任意一个字符<br>[^]除括号内任意一个字符<br>\{n\}表示前面字符出现恰好n次<br>\{n,\}不小于n次<br>\{n,m\} 最小n最多m次<br>grep -n “^$”空白行</p>
-</blockquote>
-<h3 id="字符提取命令"><a href="#字符提取命令" class="headerlink" title="字符提取命令"></a>字符提取命令</h3><blockquote>
-<h4 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h4><p>-d 指定分隔符<br>-f 制定列号<br>缺点:不适用于任意空格分隔</p>
-</blockquote>
-<blockquote>
-<h4 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h4><p>df -h | grep vda1 | awk ‘ {print $5}’|cut -d “%” -f 1<br>cat /etc/passwd |grep /bin/bash |awk ‘BEGIN{FS=”:”} {print $1 “\t” $3}’</p>
-</blockquote>
-<blockquote>
-<h4 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h4><p>a \追加<br>c \行替换<br>i \插入<br>d 删除<br>p 打印<br>s 字符串替换 sed -i ‘2s/93/59/g’ cut.txt<br>-i写入文件<br>-n只输出处理后的结果</p>
-<p>-e执行多个 sed -e ‘s/LiSi//g ; s/Zhangs//g’ cut.txt </p>
-</blockquote>
-<h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><blockquote>
-<h4 id="sort-wc"><a href="#sort-wc" class="headerlink" title="sort ,wc"></a>sort ,wc</h4><p>sort -r(逆序)  -n(按字符) -t “:” -k(排序字段) 4,4 cut.txt </p>
-</blockquote>
-<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><blockquote>
-<p>判断文件是否存在[ -e /root/sh ]&amp;&amp; echo “y”||echo “n” 或test -e 文件路径<br>文件1 -nt 文件2 判断1修改时间是否比2 新<br>文件1 -ot 文件2 判断1修改时间是否比2 旧<br>文件1 -ef 文件2 判断索引号是否一致用来判断是否为硬链接<br>比较数字<br>-eq  = ;-ne != ; -gt  &gt; ; -lt  &lt; ; -ge &gt;= ; -le &lt;=<br>[ -z “$name” ] &amp;&amp;echo “y” ||echo “n” 判断是否为空  -n是否非空<br>判断1 -a 判断2<br>判断1 -o 判断2<br>! 判断</p>
-</blockquote>
-<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><blockquote>
-<h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><ol>
-<li>备份/etc<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#2292903775@qq.com</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#备份/etc到/tmp/dbback</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">date=$(date +%y%m%d)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">size=$(du -sh /etc)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">if</span> [ -d /tmp/dbback ]</span></span><br><span class="line">       then</span><br><span class="line">               echo &quot;Date is : $date&quot; &gt; /tmp/dbback/db.txt</span><br><span class="line">               echo &quot;size is : $size&quot; &gt;&gt; /tmp/dbback/db.txt</span><br><span class="line">               cd /tmp/dbback</span><br><span class="line">               tar -zcf etc_$date.tar.gz /etc db.txt &amp;&gt;/dev/null</span><br><span class="line">               rm -rf db.txt</span><br><span class="line">       else</span><br><span class="line">               mkdir /tmp/dbback</span><br><span class="line">               echo &quot;Date is : $date&quot; &gt; /tmp/dbback/db.txt</span><br><span class="line">               echo &quot;size is : $size&quot; &gt;&gt; /tmp/dbback/db.txt</span><br><span class="line">               cd /tmp/dbback</span><br><span class="line">               tar -zcf etc_$date.tar.gz /etc db.txt &amp;&gt;/dev/null</span><br><span class="line">               rm -rf db.txt</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">fi</span></span></span><br></pre></td></tr></table></figure></li>
-<li>判断Apche是否启动<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#yt 2292903775@qq.com</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#输出apache服务器开启状态，启动apache</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">port=$(nmap -sT 172.17.0.5| grep tcp |grep http|awk <span class="string">&#x27; &#123;print $2&#125;&#x27;</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$port</span>&quot;</span> == <span class="string">&quot;open&quot;</span> ]</span></span><br><span class="line">       then</span><br><span class="line">               echo &quot;$(date) httpd is ok!&quot; &gt;&gt; /tmp/httpd_acc.log</span><br><span class="line">       else</span><br><span class="line">               systemctl restart httpd.service &amp;&gt;/dev/null</span><br><span class="line">               echo &quot;$(date) httpd reboot!&quot; &gt;&gt; /tmp/httpd_err.log</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">fi</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//流程控制</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg3</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">goto</span> end</span><br><span class="line">	<span class="comment">//没有前增量</span></span><br><span class="line">	<span class="comment">//if条件不用加括号</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">	<span class="keyword">if</span> a:=<span class="number">1</span>;a==<span class="number">10</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a=10&quot;</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> a&gt;<span class="number">10</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&gt;10&quot;</span>)</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&lt;10&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//switch</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">		<span class="comment">//可在switch后直接加判断语句</span></span><br><span class="line">	<span class="keyword">switch</span> num :=<span class="number">1</span>;num &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">		<span class="comment">//break</span></span><br><span class="line">		<span class="comment">//fallthrough关break</span></span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;2&quot;</span>)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;not find&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//迭代</span></span><br><span class="line">end:	str :=<span class="string">&quot;abc&quot;</span></span><br><span class="line">	<span class="keyword">for</span> i, data :=<span class="keyword">range</span> str&#123;<span class="comment">//返回两个值</span></span><br><span class="line">		<span class="keyword">if</span> i==<span class="number">1</span>&#123;</span><br><span class="line">			<span class="comment">//break//跳出循环，只能用于loop,switch,select</span></span><br><span class="line">			<span class="keyword">continue</span><span class="comment">//跳过本次循环,只能用于loop</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;str[%d]=%c\n&quot;</span>,i,data)</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="comment">//配合匿名变量使用丢弃第二个值 i :=rang str 或 i,_:=range str</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Go语言圣经"><a href="#Go语言圣经" class="headerlink" title="Go语言圣经"></a>Go语言圣经</h3><blockquote>
+<ol>
+<li>s := “”只能用在函数内部，而不能用于包变量</li>
+<li>在Go语言里没有指针运算，也就是不能像c语言里可以对指针进行加或减操作</li>
+<li>在Go语言中不存在未初始化的变量。</li>
+<li>简短变量声明语句中必须至少要声明一个新的变量</li>
+<li>如果两个类型都是空的，也就是说类型的大小是0，例如struct{}和[0]int，有可能有相同的地址</li>
+<li>一个变量的有效周期只取决于是否可达</li>
+<li>声明语句的作用域对应的是一个源代码的文本区域；它是一个编译时的属性。一个变量的生命周期是指程序运行时变量存在的有效时间段，在此时间区域内它可以被程序的其他部分引用；是一个运行时的概念。</li>
+</ol>
+</blockquote>
 
-</li>
-</ol>
-<h4 id="case"><a href="#case" class="headerlink" title="case"></a>case</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#for使用</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;enter 1 to choose c++&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;enter 2 to choose go&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;enter 3 to choose python&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">read</span> -t 30 -p <span class="string">&#x27;please enter number: &#x27;</span> cho</span> </span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">case</span> <span class="string">&quot;<span class="variable">$cho</span>&quot;</span> <span class="keyword">in</span></span></span><br><span class="line">       &quot;1&quot;)</span><br><span class="line">               echo &quot;c++ is the best language in the world!&quot;</span><br><span class="line">               ;;  </span><br><span class="line">       &quot;2&quot;)</span><br><span class="line">               echo &quot;go is the best language in the world!&quot;</span><br><span class="line">               ;;  </span><br><span class="line">       &quot;3&quot;)</span><br><span class="line">               echo &quot;python is the best language in the world!&quot;</span><br><span class="line">               ;;  </span><br><span class="line">       *)  </span><br><span class="line">               echo &quot;nonono&quot;</span><br><span class="line">               ;;  </span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">esac</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#Author:yt</span></span> </span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#mail:2292903775@qq.com</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#批量添加用户</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">read</span> -t 30 -p <span class="string">&quot;input name: &quot;</span> name</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">read</span> -t 30 -p <span class="string">&quot;input num: &quot;</span> num</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">read</span> -t 30 -p <span class="string">&quot;input passwd: &quot;</span> pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">if</span> [ ! -z <span class="string">&quot;<span class="variable">$name</span>&quot;</span> -a ! -z <span class="string">&quot;<span class="variable">$num</span>&quot;</span> -a ! -z <span class="string">&quot;<span class="variable">$pass</span>&quot;</span> ]</span></span><br><span class="line">then</span><br><span class="line">	y=$(echo $num|sed &#x27;s/^[0-9]*$//g&#x27;)</span><br><span class="line">	if [ -z &quot;$y&quot; ]</span><br><span class="line">		then</span><br><span class="line">			for ((i=1;i&lt;=$num;i=i+1))</span><br><span class="line">				do</span><br><span class="line">					useradd $name$i &amp;&gt; /dev/null</span><br><span class="line">					echo $pass | passwd --stdin $name$i &amp;&gt;/dev/null</span><br><span class="line">					echo &quot;用户$name$i 添加完毕&quot;</span><br><span class="line">				done</span><br><span class="line">	fi</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">fi</span></span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="while-until"><a href="#while-until" class="headerlink" title="while,until"></a>while,until</h4><blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#Author:yt</span></span> </span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#mail:2292903775@qq.com</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#while和until的使用</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">i=1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">s=0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">while</span> [ <span class="string">&quot;<span class="variable">$i</span>&quot;</span> -le 100 ]</span></span><br><span class="line">do</span><br><span class="line">	s=$(($i+$s))</span><br><span class="line">	i=$(($i+1))</span><br><span class="line">done</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$s</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">i=1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">s=0</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">until [ <span class="variable">$i</span> -gt 100 ]</span></span><br><span class="line">do</span><br><span class="line">	s=$(($i+$s))</span><br><span class="line">	i=$(($i+1))</span><br><span class="line">done</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$s</span></span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="九-服务管理"><a href="#九-服务管理" class="headerlink" title="九. 服务管理"></a>九. 服务管理</h2><h3 id="服务分类"><a href="#服务分类" class="headerlink" title="服务分类"></a>服务分类</h3><blockquote>
-<p>chkconfig –list    查询系统中安装的rpm包服务<br>不能查询源码包安装的服务<br>源码包默认安装位置/usr/local/</p>
-</blockquote>
-<h3 id="RPM服务的管理-独立服务管理"><a href="#RPM服务的管理-独立服务管理" class="headerlink" title="RPM服务的管理-独立服务管理"></a>RPM服务的管理-独立服务管理</h3><blockquote>
-<p>/etc/init.d/：启动脚本位置<br>/etc/sysconfig/：初始化环境配置文件位置<br>/etc/：配置文件位置<br>/etc/xinetd.config：xinetd配置文件<br>/etc/xinetd.d/：基于xinetd服务的启动脚本<br>/var/lib：服务产生的数据<br>/var/log：日志</p>
-</blockquote>
-<blockquote>
-<h4 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h4><ol>
-<li>chkconfig –level运行级别 独立服务名 on|off<br>systemctl enable httpd.service</li>
-<li>修改   /etc/rc.d//rc.local 增加 /usr/sbin/httpd -k start开机自启apache服务</li>
-<li>ntsysv命令</li>
-</ol>
-</blockquote>
-<h3 id="RPM服务的管理-基于Xinetd服务管理"><a href="#RPM服务的管理-基于Xinetd服务管理" class="headerlink" title="RPM服务的管理-基于Xinetd服务管理"></a>RPM服务的管理-基于Xinetd服务管理</h3><blockquote>
-<p>启动与自启动通用 bad bad<br>vi /etc/xinetd.d/telnet  修改disable=no<br>chkconfig telnet on<br>ntsysv</p>
-</blockquote>
-<h3 id="源码包服务管理"><a href="#源码包服务管理" class="headerlink" title="源码包服务管理"></a>源码包服务管理</h3><blockquote>
-<p>安装路径+启动脚本</p>
-</blockquote>
-<h2 id="十-系统管理"><a href="#十-系统管理" class="headerlink" title="十. 系统管理"></a>十. 系统管理</h2><h3 id="进程管理-进程查看"><a href="#进程管理-进程查看" class="headerlink" title="进程管理-进程查看"></a>进程管理-进程查看</h3><blockquote>
-<p>ps aux (a前台x后台u由谁产生)<br>ps -le(l详细信息e所有进程)<br>top查看系统健康状态<br>P以cpu使用率排序   M以内存使用率排序   N以pid排序   ？帮助   -d 更新时间默认3s<br>pstree进程树-pu(p显示id  u显示用户)</p>
-</blockquote>
-<h3 id="进程管理-进程终止"><a href="#进程管理-进程终止" class="headerlink" title="进程管理-进程终止"></a>进程管理-进程终止</h3><blockquote>
-<p>kil -l 查看可用信号<br>kill -1重启 -9强制终止 -15默认终止（有可能杀不掉）进程id<br>killall 进程名<br>pkill -9 -t pts/1 按终端号踢用户</p>
-</blockquote>
-<h3 id="工作管理"><a href="#工作管理" class="headerlink" title="工作管理"></a>工作管理</h3><blockquote>
-<h4 id="程序放入后台"><a href="#程序放入后台" class="headerlink" title="程序放入后台"></a>程序放入后台</h4><p>执行语句后加&amp; 后台执行<br>ctrl+z 后台暂停</p>
-</blockquote>
-<blockquote>
-<h4 id="查看后台工作"><a href="#查看后台工作" class="headerlink" title="查看后台工作"></a>查看后台工作</h4><p>jobs -l(显示PID)</p>
-</blockquote>
-<blockquote>
-<h4 id="后台工作恢复到前台执行"><a href="#后台工作恢复到前台执行" class="headerlink" title="后台工作恢复到前台执行"></a>后台工作恢复到前台执行</h4><p>fg %工作号(不是PID<br>不加工作号默认从+开始执行</p>
-</blockquote>
-<blockquote>
-<h4 id="后台工作恢复到后台执行"><a href="#后台工作恢复到后台执行" class="headerlink" title="后台工作恢复到后台执行"></a>后台工作恢复到后台执行</h4><p>如果命令与前台有交互则不能放在后台执行<br>bg %工作号</p>
-</blockquote>
-<h3 id="系统资源查看"><a href="#系统资源查看" class="headerlink" title="系统资源查看"></a>系统资源查看</h3><blockquote>
-<p>vmstat 2(刷新延时s) 3(刷新次数)<br>dmesg开机内核检测信息 dmesg|grep CPU<br>free查看内存使用状态<br>cat /proc/cpuinfo<br>uptime 启动时间和平均负载 =top第一行=w第一行</p>
-</blockquote>
-<h3 id="系统定时任务"><a href="#系统定时任务" class="headerlink" title="系统定时任务"></a>系统定时任务</h3><h2 id="十一-日志管理"><a href="#十一-日志管理" class="headerlink" title="十一. 日志管理"></a>十一. 日志管理</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><h3 id="rsyslogd服务"><a href="#rsyslogd服务" class="headerlink" title="rsyslogd服务"></a>rsyslogd服务</h3><h3 id="日志轮替"><a href="#日志轮替" class="headerlink" title="日志轮替"></a>日志轮替</h3><h2 id="十二-启动管理"><a href="#十二-启动管理" class="headerlink" title="十二. 启动管理"></a>十二. 启动管理</h2><h3 id="启动流程-运行级别"><a href="#启动流程-运行级别" class="headerlink" title="启动流程-运行级别"></a>启动流程-运行级别</h3><h3 id="启动流程-启动过程"><a href="#启动流程-启动过程" class="headerlink" title="启动流程-启动过程"></a>启动流程-启动过程</h3><h3 id="启动引导程序-Grub配置文件"><a href="#启动引导程序-Grub配置文件" class="headerlink" title="启动引导程序-Grub配置文件"></a>启动引导程序-Grub配置文件</h3><h3 id="启动引导程序-Grub加密"><a href="#启动引导程序-Grub加密" class="headerlink" title="启动引导程序-Grub加密"></a>启动引导程序-Grub加密</h3><h3 id="系统修复模式"><a href="#系统修复模式" class="headerlink" title="系统修复模式"></a>系统修复模式</h3><h2 id="十三-备份恢复"><a href="#十三-备份恢复" class="headerlink" title="十三. 备份恢复"></a>十三. 备份恢复</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="备份命令"><a href="#备份命令" class="headerlink" title="备份命令"></a>备份命令</h3>
       
 
       
@@ -537,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Go</a>
         		</li>
       		
 		</ul>
@@ -593,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://joengtou.github.io/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://joengtou.github.io/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -607,15 +301,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Go学习之路
-        
-      </div>
-    </a>
   
+    <a href="/2021/01/10/Linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux学习之路</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
