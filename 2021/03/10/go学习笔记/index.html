@@ -11,12 +11,12 @@
   <meta name="description" content="go的优势 部署简单，不需要太多依赖库是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉gc垃圾自动回收自带并发  适用场景 1.服务器编程(日志，数据打包，虚拟机处理，文件系统)2.分布式系统(数据库代理器)3.网络编程(web应用，api应用)4.内存数据库5.云平台[中文文档][https:&#x2F;studygolang.com&#x2F;pkgdoc]  基本语法 自动推导类型相当">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go学习之路">
-<meta property="og:url" content="https://joengtou.github.io/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="https://joengtou.github.io/2021/03/10/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Joengtou&#39;s Blog">
 <meta property="og:description" content="go的优势 部署简单，不需要太多依赖库是静态语言(可以在编译的时候检查出大多数问题)，有动态语言(使用包)的感觉gc垃圾自动回收自带并发  适用场景 1.服务器编程(日志，数据打包，虚拟机处理，文件系统)2.分布式系统(数据库代理器)3.网络编程(web应用，api应用)4.内存数据库5.云平台[中文文档][https:&#x2F;studygolang.com&#x2F;pkgdoc]  基本语法 自动推导类型相当">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-01-19T06:30:10.740Z">
-<meta property="article:modified_time" content="2021-02-02T09:17:28.616Z">
+<meta property="article:published_time" content="2021-03-10T06:44:55.436Z">
+<meta property="article:modified_time" content="2021-03-10T06:44:55.441Z">
 <meta property="article:author" content="JoengTou">
 <meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary">
@@ -157,8 +157,8 @@
   
 
         
-        <a href="/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-01-19T06:30:10.740Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
+        <a href="/2021/03/10/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-03-10T06:44:55.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
 </a>
         
       </header>
@@ -186,7 +186,7 @@
 </blockquote>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//流程控制</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">baseg3</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">goto</span> end</span><br><span class="line">	<span class="comment">//没有前增量</span></span><br><span class="line">	<span class="comment">//if条件不用加括号</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">	<span class="keyword">if</span> a:=<span class="number">1</span>;a==<span class="number">10</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a=10&quot;</span>)</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> a&gt;<span class="number">10</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&gt;10&quot;</span>)</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;a&lt;10&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//switch</span></span><br><span class="line">		<span class="comment">//支持一个初始化语句用;隔开</span></span><br><span class="line">		<span class="comment">//可在switch后直接加判断语句</span></span><br><span class="line">	<span class="keyword">switch</span> num :=<span class="number">1</span>;num &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">		<span class="comment">//break</span></span><br><span class="line">		<span class="comment">//fallthrough关break</span></span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;2&quot;</span>)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">&quot;not find&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//迭代</span></span><br><span class="line">end:	str :=<span class="string">&quot;abc&quot;</span></span><br><span class="line">	<span class="keyword">for</span> i, data :=<span class="keyword">range</span> str&#123;<span class="comment">//返回两个值</span></span><br><span class="line">		<span class="keyword">if</span> i==<span class="number">1</span>&#123;</span><br><span class="line">			<span class="comment">//break//跳出循环，只能用于loop,switch,select</span></span><br><span class="line">			<span class="keyword">continue</span><span class="comment">//跳过本次循环,只能用于loop</span></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;str[%d]=%c\n&quot;</span>,i,data)</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="comment">//配合匿名变量使用丢弃第二个值 i :=rang str 或 i,_:=range str</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Go语言圣经"><a href="#Go语言圣经" class="headerlink" title="Go语言圣经"></a>Go语言圣经</h3><blockquote>
+<h3 id="Go语言圣经-amp-amp-Go指南"><a href="#Go语言圣经-amp-amp-Go指南" class="headerlink" title="Go语言圣经 &amp;&amp; Go指南"></a>Go语言圣经 &amp;&amp; Go指南</h3><blockquote>
 <ol>
 <li>s := “”只能用在函数内部，而不能用于包变量</li>
 <li>在Go语言里没有指针运算，也就是不能像c语言里可以对指针进行加或减操作</li>
@@ -195,6 +195,26 @@
 <li>如果两个类型都是空的，也就是说类型的大小是0，例如struct{}和[0]int，有可能有相同的地址</li>
 <li>一个变量的有效周期只取决于是否可达</li>
 <li>声明语句的作用域对应的是一个源代码的文本区域；它是一个编译时的属性。一个变量的生命周期是指程序运行时变量存在的有效时间段，在此时间区域内它可以被程序的其他部分引用；是一个运行时的概念。</li>
+<li>在Go语言中，%取模运算符的符号和被取模数的符号总是一致的，因此<code>-5%3</code>和<code>-5%-3</code>结果都是-2</li>
+<li>%之后的<code>[1]</code>副词告诉Printf函数再次使用第一个操作数。%后的<code>#</code>副词告诉Printf在用%o、%x或%X输出时生成0、0x或0X前缀。</li>
+<li>%p打印带单引号的字符</li>
+<li>第i个字节并不一定是字符串的第i个字符，因为对于非ASCII字符的UTF8编码会要两个或多个字节。</li>
+<li>因为字符串是不可修改的，因此尝试修改字符串内部数据的操作也是被禁止的,不变性意味着如果两个字符串共享相同的底层数据的话也是安全的，这使得复制任何长度的字符串代价是低廉的。同样，一个字符串s和对应的子字符串切片s[7:]的操作也可以安全地共享相同的内存，因此字符串切片操作代价也是低廉的。在这两种情况下都没有必要分配新的内存。</li>
+<li>slice之间不能比较，因此我们不能使用==操作符来判断两个slice是否含有全部相等元素。不过标准库提供了高度优化的bytes.Equal函数来判断两个字节型slice是否相等（[]byte），但是对于其他类型的slice，我们必须自己展开每个元素进行比较</li>
+<li>非结构体类型也可以拥有方法</li>
+<li>带指针参数的函数必须接受一个指针,而以指针为接收者的方法被调用时，接收者既能为值又能为指针(反之亦然)</li>
+<li>接口类型是由一组方法签名定义的集合</li>
+<li>类型通过实现一个接口的所有方法来实现该接口</li>
+<li>类型断言t, ok := i.(T)</li>
+<li>默认情况下，发送和接收操作在另一端准备好之前都会阻塞。这使得 Go 程可以在没有显式的锁或竞态变量的情况下进行同步。</li>
+<li>Go的 defer语句用于预设一个函数调用（即推迟执行函数）， 该函数会在执行 defer 的函数返回之前立即执行</li>
+<li>被推迟函数的实参（如果该函数为方法则还包括接收者）在推迟执行时就会求值， 而不是在调用执行时才求值。这样不仅无需担心变量值在函数执行时被改变， 同时还意味着单个已推迟的调用可推迟多个函数的执行。</li>
+<li>new不会初始化内存，只会将内存置零。返回一个指针</li>
+<li>内建函数 make(T, args) 的目的不同于 new(T)。它只用于创建切片、映射和信道，并返回类型为 T（而非 *T）的一个已初始化 （而非置零）的值。 出现这种用差异的原因在于，这三种类型本质上为引用数据类型，它们在使用前必须初始化。 make 只适用于映射、切片和信道且不返回指针。</li>
+<li> 以下为数组在Go和C中的主要区别。在Go中，<br>数组是值。将一个数组赋予另一个数组会复制其所有元素。<br>特别地，若将某个数组传入某个函数，它将接收到该数组的一份副本而非指针。<br>数组的大小是其类型的一部分。类型 [10]int 和 [20]int 是不同的。</li>
+<li> %+v 会为结构体的每个字段添上字段名，而另一种格式 %#v 将完全按照Go的语法打印值。</li>
+<li>尽管从表面上看，Go的初始化过程与C或C++并不算太大，但它确实更为强大。 在初始化过程中，不仅可以构建复杂的结构，还能正确处理不同包对象间的初始化顺序。</li>
+<li></li>
 </ol>
 </blockquote>
 
@@ -287,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://joengtou.github.io/2021/01/19/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://joengtou.github.io/2021/03/10/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -421,11 +441,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">Go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Go</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
